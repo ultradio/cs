@@ -43,6 +43,17 @@ some_dict = sorted(some_dict.items(), key = lambda x: x[1])
 print(some_dict)
 
 """
+차집합, 교집합, 합집합
+"""
+some_set1 = {1,2,3}
+some_set2 = {1,2,4,5,6}
+
+ret1 = some_set1.difference(some_set2)
+ret2 = some_set1.union(some_set2)
+ret3 = some_set1.intersection(some_set2)
+print(ret1, ret2, ret3)
+
+"""
 순열 - 순서대로 뽑음
 """
 from itertools import permutations
@@ -72,3 +83,11 @@ heapq.heapify(some_list)
 heapq.heappop(some_list)
 heapq.heappush(some_list, 4)
 print(some_list)
+
+"""
+가장 큰수 / 가장 작은 수
+"""
+v1 = float('inf')
+v2 = float('-inf')
+print(v1 < 1000)
+print(v2 < 1000)
