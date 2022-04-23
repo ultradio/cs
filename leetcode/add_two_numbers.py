@@ -13,12 +13,17 @@ class ListNode:
 
 class Solution:
     def __init__(self) -> None:
-        self.head = None
+        self.head: ListNode = None
+        self.tail: ListNode = None
     
     def push(self, val):
         new_node = ListNode(val=val)
-        new_node.next = self.head
-        self.head = new_node
+        if self.tail:
+            self.tail.next = new_node
+            self.tail = new_node
+        else:
+            self.tail = new_node
+            self.head = new_node
 
     def printList(self):
         temp = self.head
@@ -42,9 +47,10 @@ class Solution:
             sum_val = sum_val if sum_val < 10 else sum_val % 10
 
             temp = ListNode(sum_val)
-            if self.head:
+            if self.tail:
                 prev.next = temp
             else:
+                self.tail = temp
                 self.head = temp
             prev = temp
 
